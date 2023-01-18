@@ -1,4 +1,4 @@
-**Image Processing API
+##Image Processing API
 In server folder, there are 3 main folders, src folder which includes typescript files, build folder which includes compiled js files and spec folder that contains some jasmine configurations.
 in package.json, there are 7 scripts for the dependencies:
  1. prettier: to format the code by the rules configured in the .prettierrc file.
