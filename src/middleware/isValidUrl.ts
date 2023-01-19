@@ -15,7 +15,7 @@ export const isValidUrl = (req: Request, res: Response, next: NextFunction) => {
     return res
       .status(400)
       .send(
-        'invalid url, the url must be localhost:3000/api/images?filename=name&width=any-number&height=any-number'
+        'invalid url, the url must be http://localhost:3000/api/images?filename=name&width=any-number&height=any-number'
       );
   }
   next();
