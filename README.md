@@ -1,5 +1,5 @@
 ## Image Processing API
-* There are 3 main folders, src folder which includes typescript files, build folder which includes compiled js files and spec folder that contains some jasmine configurations.
+* There are 4 main folders, src folder which includes typescript files, build folder which includes compiled js files, assets folder which includes the original and thumbnail images and spec folder that contains some jasmine configurations.
 
 * in package.json, there are 7 scripts for the dependencies:
   - **prettier:** to format the code by the rules configured in the .prettierrc file.
@@ -11,7 +11,6 @@
  
  * The src folder contains:
    - **index.ts:** the entry point of the app.
-   - **assets folder:** contains full folder that has the original images and thumbnail folder that has the resized images.
    - **routes folder:** contains the endpoint.
      - The endpoint used to resize an existing image: 'http://localhost:3000/api/images?filename=fjord&width=200&height=200'
    - **utilities folder:** contains readFile function and resize function.
