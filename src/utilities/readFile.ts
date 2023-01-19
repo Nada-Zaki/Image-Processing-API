@@ -1,6 +1,9 @@
 import fs from 'fs';
 
-const readFile = async (path: string, filename: string) => {
+const readFile = async (
+  path: string,
+  filename: string
+): Promise<string | undefined> => {
   let file;
   const images = await fs.promises.readdir(path);
   for (const image of images) {
