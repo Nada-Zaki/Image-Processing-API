@@ -3,13 +3,11 @@ import fs from 'fs';
 const readFile = async (
   path: string,
   filename: string
-): Promise<string | undefined> => {
-  let file;
+): Promise<string | void> => {
   const images = await fs.promises.readdir(path);
   for (const image of images) {
     if (image.split('.')[0] === filename) {
-      file = image;
-      return file;
+      return image;
     }
   }
 };

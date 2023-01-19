@@ -6,7 +6,7 @@ export const isFileExist = async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<Response | undefined> => {
+): Promise<Response | void> => {
   const filename = req.query.filename as string;
   const fullDirPath = path.join(
     __dirname.split('\\').slice(0, -2).join('\\'),

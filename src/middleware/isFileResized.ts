@@ -7,7 +7,7 @@ export const isFileResized = async (
   req: Request,
   res: Response,
   next: NextFunction
-): Promise<void> => {
+): Promise<Response | void> => {
   const filename = req.query.filename as string;
   const width = parseInt(req.query.width as string) as number;
   const height = parseInt(req.query.height as string) as number;

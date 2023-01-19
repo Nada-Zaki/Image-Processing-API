@@ -17,8 +17,13 @@ const path_1 = __importDefault(require("path"));
 const resizeImage = (fullDirPath, thumbDirPath, file, width, height) => __awaiter(void 0, void 0, void 0, function* () {
     // Prevent sharp library from keeping previously resized image open even if we changed the scale next time
     sharp_1.default.cache(false);
-    return yield (0, sharp_1.default)(path_1.default.join(fullDirPath, file))
-        .resize(width, height)
-        .toFile(thumbDirPath + `\\${file}`);
+    try {
+        return yield (0, sharp_1.default)(path_1.default.join(fullDirPath, file))
+            .resize(width, height)
+            .toFile(thumbDirPath + `\\${file}`);
+    }
+    catch (_a) {
+        throw new Error("Can't resize the image");
+    }
 });
 exports.default = resizeImage;

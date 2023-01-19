@@ -14,12 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const readFile = (path, filename) => __awaiter(void 0, void 0, void 0, function* () {
-    let file;
     const images = yield fs_1.default.promises.readdir(path);
     for (const image of images) {
         if (image.split('.')[0] === filename) {
-            file = image;
-            return file;
+            return image;
         }
     }
 });
