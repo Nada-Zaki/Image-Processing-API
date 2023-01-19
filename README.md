@@ -6,7 +6,6 @@
   - **lint:** to run eslint dependency.
   - **dev:** to run typescript code with nodemon.
   - **build:** to compile typscript code.
-  - **jasmine:** to run unit testing on typescript code.
   - **test:** to run tests on compiled code.
   - **start:** to run the compiled code.
  
