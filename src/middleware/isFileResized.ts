@@ -12,11 +12,7 @@ export const isFileResized = async (
   const width = parseInt(req.query.width as string) as number;
   const height = parseInt(req.query.height as string) as number;
 
-  const thumbDirPath = path.join(
-    __dirname.split('\\').slice(0, -2).join('\\'),
-    'assets',
-    'thumbnail'
-  );
+  const thumbDirPath = path.join(__dirname, '../../assets', 'thumbnail');
 
   try {
     const file = await readFile(thumbDirPath, filename);

@@ -12,7 +12,7 @@
  * The src folder contains:
    - **index.ts:** the entry point of the app.
    - **routes folder:** contains the endpoint.
-     - The endpoint used to resize an existing image: 'http://localhost:3000/api/images?filename=fjord&width=200&height=200'
+     - The endpoint used to resize an existing image: 'http://localhost:3000/api/images?filename=palmtunnel&width=200&height=200'
    - **utilities folder:** contains readFile function and resize function.
      - **readFile function:** it reads **any file format** from certain directory and if the file exists, it will return its **name and extension**.
      - **resize function:** it takes the full and thumbnail directories, the image and its desired size and rescale the image by sharp module, and finally save the resized images in thumbnail folder.

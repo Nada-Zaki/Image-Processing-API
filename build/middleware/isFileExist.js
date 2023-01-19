@@ -17,7 +17,7 @@ const path_1 = __importDefault(require("path"));
 const readFile_1 = __importDefault(require("../utilities/readFile"));
 const isFileExist = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const filename = req.query.filename;
-    const fullDirPath = path_1.default.join(__dirname.split('\\').slice(0, -2).join('\\'), 'assets', 'full');
+    const fullDirPath = path_1.default.join(__dirname, '../../assets', 'full');
     const file = yield (0, readFile_1.default)(fullDirPath, filename);
     if (!file) {
         return res.status(404).send('This image does not exist');

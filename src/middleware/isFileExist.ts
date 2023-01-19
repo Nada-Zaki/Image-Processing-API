@@ -8,11 +8,7 @@ export const isFileExist = async (
   next: NextFunction
 ): Promise<Response | void> => {
   const filename = req.query.filename as string;
-  const fullDirPath = path.join(
-    __dirname.split('\\').slice(0, -2).join('\\'),
-    'assets',
-    'full'
-  );
+  const fullDirPath = path.join(__dirname, '../../assets', 'full');
 
   const file = await readFile(fullDirPath, filename);
   if (!file) {

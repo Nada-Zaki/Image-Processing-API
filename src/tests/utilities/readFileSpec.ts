@@ -3,17 +3,14 @@ import readFile from '../../utilities/readFile';
 
 describe('test read file function', () => {
   it('should return truthy value if file exists', async () => {
-    const imgDir = __dirname.split('\\').slice(0, -3).join('\\');
-    const file = await readFile(path.join(imgDir, 'assets', 'full'), 'fjord');
+    const imgDir = path.join(__dirname, '../../../assets', 'full');
+    const file = await readFile(imgDir, 'fjord');
     expect(file).toBeTruthy();
   });
 
   it('should return undefined if file is not exist', async () => {
-    const imgDir = __dirname.split('\\').slice(0, -3).join('\\');
-    const file = await readFile(
-      path.join(imgDir, 'assets', 'thumbnail'),
-      'anything'
-    );
+    const imgDir = path.join(__dirname, '../../../assets', 'thumbnail');
+    const file = await readFile(imgDir, 'anything');
     expect(file).toBeUndefined();
   });
 });

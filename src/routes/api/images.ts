@@ -14,17 +14,12 @@ images.get(
   async (req: Request, res: Response): Promise<void> => {
     const width = parseInt(req.query.width as string) as number;
     const height = parseInt(req.query.height as string) as number;
+
     const { file } = res.locals;
-    const fullDirPath = path.join(
-      __dirname.split('\\').slice(0, -3).join('\\'),
-      'assets',
-      'full'
-    );
-    const thumbDirPath = path.join(
-      __dirname.split('\\').slice(0, -3).join('\\'),
-      'assets',
-      'thumbnail'
-    );
+
+    const fullDirPath = path.join(__dirname, '../../../assets', 'full');
+    const thumbDirPath = path.join(__dirname, '../../../assets', 'thumbnail');
+
     try {
       await resizeImage(fullDirPath, thumbDirPath, file, width, height);
       res.sendFile(path.join(thumbDirPath, file));

@@ -16,13 +16,13 @@ const path_1 = __importDefault(require("path"));
 const readFile_1 = __importDefault(require("../../utilities/readFile"));
 describe('test read file function', () => {
     it('should return truthy value if file exists', () => __awaiter(void 0, void 0, void 0, function* () {
-        const imgDir = __dirname.split('\\').slice(0, -3).join('\\');
-        const file = yield (0, readFile_1.default)(path_1.default.join(imgDir, 'assets', 'full'), 'fjord');
+        const imgDir = path_1.default.join(__dirname, '../../../assets', 'full');
+        const file = yield (0, readFile_1.default)(imgDir, 'fjord');
         expect(file).toBeTruthy();
     }));
     it('should return undefined if file is not exist', () => __awaiter(void 0, void 0, void 0, function* () {
-        const imgDir = __dirname.split('\\').slice(0, -3).join('\\');
-        const file = yield (0, readFile_1.default)(path_1.default.join(imgDir, 'assets', 'thumbnail'), 'anything');
+        const imgDir = path_1.default.join(__dirname, '../../../assets', 'thumbnail');
+        const file = yield (0, readFile_1.default)(imgDir, 'anything');
         expect(file).toBeUndefined();
     }));
 });
