@@ -11,7 +11,14 @@ describe('Tests for image information end point', () => {
     expect(response.status).toBe(200);
   });
 
-  it('should return status code 400 as a bad request because it invalid url', async () => {
+  it('should return status code 400 as a bad request because of invalid width', async () => {
+    const response = await request.get(
+      '/api/images?filename=fjord&width=200gjh&height=200'
+    );
+    expect(response.status).toBe(400);
+  });
+
+  it('should return status code 400 as a bad request because of invalid url', async () => {
     const response = await request.get('/api/images');
     expect(response.status).toBe(400);
   });

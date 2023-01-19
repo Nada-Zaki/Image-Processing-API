@@ -18,8 +18,8 @@ const sharp_1 = __importDefault(require("sharp"));
 const readFile_1 = __importDefault(require("../utilities/readFile"));
 const isFileResized = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const filename = req.query.filename;
-    const width = parseInt(req.query.width);
-    const height = parseInt(req.query.height);
+    const width = +req.query.width;
+    const height = +req.query.height;
     const thumbDirPath = path_1.default.join(__dirname, '../../assets', 'thumbnail');
     try {
         const file = yield (0, readFile_1.default)(thumbDirPath, filename);

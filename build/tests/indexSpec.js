@@ -20,7 +20,11 @@ describe('Tests for image information end point', () => {
         const response = yield request.get('/api/images?filename=fjord&width=200&height=200');
         expect(response.status).toBe(200);
     }));
-    it('should return status code 400 as a bad request because it invalid url', () => __awaiter(void 0, void 0, void 0, function* () {
+    it('should return status code 400 as a bad request because of invalid width', () => __awaiter(void 0, void 0, void 0, function* () {
+        const response = yield request.get('/api/images?filename=fjord&width=200gjh&height=200');
+        expect(response.status).toBe(400);
+    }));
+    it('should return status code 400 as a bad request because of invalid url', () => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield request.get('/api/images');
         expect(response.status).toBe(400);
     }));

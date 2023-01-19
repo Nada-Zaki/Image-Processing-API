@@ -12,8 +12,8 @@ images.get(
   isFileExist,
   isFileResized,
   async (req: Request, res: Response): Promise<void> => {
-    const width = parseInt(req.query.width as string) as number;
-    const height = parseInt(req.query.height as string) as number;
+    const width = +(req.query.width as string);
+    const height = +(req.query.height as string);
 
     const { file } = res.locals;
 

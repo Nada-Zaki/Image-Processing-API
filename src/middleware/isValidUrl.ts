@@ -5,9 +5,9 @@ export const isValidUrl = (
   res: Response,
   next: NextFunction
 ): Response | void => {
-  const filename = (req.query.filename as string) ?? null;
-  const width = (parseInt(req.query.width as string) as number) ?? null;
-  const height = (parseInt(req.query.height as string) as number) ?? null;
+  const filename = req.query.filename as string;
+  const width = +(req.query.width as string);
+  const height = +(req.query.height as string);
 
   if (
     !filename ||

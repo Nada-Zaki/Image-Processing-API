@@ -9,8 +9,8 @@ export const isFileResized = async (
   next: NextFunction
 ): Promise<Response | void> => {
   const filename = req.query.filename as string;
-  const width = parseInt(req.query.width as string) as number;
-  const height = parseInt(req.query.height as string) as number;
+  const width = +(req.query.width as string);
+  const height = +(req.query.height as string);
 
   const thumbDirPath = path.join(__dirname, '../../assets', 'thumbnail');
 
