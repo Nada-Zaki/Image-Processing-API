@@ -25,3 +25,5 @@
      - **isFileResized:** checks if the image has been resized before with same size, it will return the cached one without making the processing.
   
  * The build folder content is same as the src folder but in compiled javascript.
+ 
+ * Run "npm install" to install the used dependencies.
