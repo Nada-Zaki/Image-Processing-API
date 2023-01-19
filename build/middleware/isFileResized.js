@@ -20,7 +20,7 @@ const isFileResized = (req, res, next) => __awaiter(void 0, void 0, void 0, func
     const filename = req.query.filename;
     const width = parseInt(req.query.width);
     const height = parseInt(req.query.height);
-    const thumbDirPath = path_1.default.join(__dirname.split('\\').slice(0, -1).join('\\'), 'assets', 'thumbnail');
+    const thumbDirPath = path_1.default.join(__dirname.split('\\').slice(0, -2).join('\\'), 'assets', 'thumbnail');
     try {
         const file = yield (0, readFile_1.default)(thumbDirPath, filename);
         if (!file) {

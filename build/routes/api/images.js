@@ -23,8 +23,8 @@ images.get('/', isValidUrl_1.isValidUrl, isFileExist_1.isFileExist, isFileResize
     const width = parseInt(req.query.width);
     const height = parseInt(req.query.height);
     const { file } = res.locals;
-    const fullDirPath = path_1.default.join(__dirname.split('\\').slice(0, -2).join('\\'), 'assets', 'full');
-    const thumbDirPath = path_1.default.join(__dirname.split('\\').slice(0, -2).join('\\'), 'assets', 'thumbnail');
+    const fullDirPath = path_1.default.join(__dirname.split('\\').slice(0, -3).join('\\'), 'assets', 'full');
+    const thumbDirPath = path_1.default.join(__dirname.split('\\').slice(0, -3).join('\\'), 'assets', 'thumbnail');
     try {
         yield (0, resizeImage_1.default)(fullDirPath, thumbDirPath, file, width, height);
         res.sendFile(path_1.default.join(thumbDirPath, file));

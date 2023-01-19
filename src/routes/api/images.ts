@@ -11,12 +11,12 @@ images.get('/', isValidUrl, isFileExist, isFileResized, async (req, res) => {
   const height = parseInt(req.query.height as string) as number;
   const { file } = res.locals;
   const fullDirPath = path.join(
-    __dirname.split('\\').slice(0, -2).join('\\'),
+    __dirname.split('\\').slice(0, -3).join('\\'),
     'assets',
     'full'
   );
   const thumbDirPath = path.join(
-    __dirname.split('\\').slice(0, -2).join('\\'),
+    __dirname.split('\\').slice(0, -3).join('\\'),
     'assets',
     'thumbnail'
   );

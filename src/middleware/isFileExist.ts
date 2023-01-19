@@ -9,7 +9,7 @@ export const isFileExist = async (
 ) => {
   const filename = req.query.filename as string;
   const fullDirPath = path.join(
-    __dirname.split('\\').slice(0, -1).join('\\'),
+    __dirname.split('\\').slice(0, -2).join('\\'),
     'assets',
     'full'
   );

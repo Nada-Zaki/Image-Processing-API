@@ -13,7 +13,7 @@ export const isFileResized = async (
   const height = parseInt(req.query.height as string) as number;
 
   const thumbDirPath = path.join(
-    __dirname.split('\\').slice(0, -1).join('\\'),
+    __dirname.split('\\').slice(0, -2).join('\\'),
     'assets',
     'thumbnail'
   );

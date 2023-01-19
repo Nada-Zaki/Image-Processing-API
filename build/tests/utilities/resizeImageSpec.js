@@ -16,7 +16,7 @@ const path_1 = __importDefault(require("path"));
 const resizeImage_1 = __importDefault(require("../../utilities/resizeImage"));
 describe('test resize image function', () => {
     it('should return resized image name if name,width and height are valid', () => __awaiter(void 0, void 0, void 0, function* () {
-        const imgDir = __dirname.split('\\').slice(0, -2).join('\\');
+        const imgDir = __dirname.split('\\').slice(0, -3).join('\\');
         const resizedImage = yield (0, resizeImage_1.default)(path_1.default.join(imgDir, 'assets', 'full'), path_1.default.join(imgDir, 'assets', 'thumbnail'), 'fjord.jpg', 500, 500);
         expect(resizedImage).toBeTruthy();
     }));
